@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "23828036343",
+    "project_id": "recipe-recomendation",
+    "storage_bucket": "recipe-recomendation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23828036343:android:18c79a860b2dc5642ef1f2",
+        "android_client_info": {
+          "package_name": "com.example.reciperecomendation"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7anG8k8Ak2KHxa7G7UMdFWEuIXxbh5eY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
