@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,14 +30,17 @@ public class registration extends AppCompatActivity {
         EditText username=findViewById(R.id.name);
         EditText user_email=findViewById(R.id.email);
         EditText password=findViewById(R.id.passwordReg);
+        ProgressBar loader=findViewById(R.id.loader);
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loader.setVisibility(View.VISIBLE);
            auth.createUserWithEmailAndPassword(user_email.getText().toString(),password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                @Override
                public void onComplete(@NonNull Task<AuthResult> task) {
                    if(task.isSuccessful())
                    {
+                       loader.setVisibility(View.GONE);
                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
                    }
                }

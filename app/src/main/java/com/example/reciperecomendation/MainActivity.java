@@ -33,9 +33,13 @@ public class MainActivity extends AppCompatActivity {
                 auth.signInWithEmailAndPassword(user_email.getText().toString(),password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_LONG);
-                   startActivity(new Intent(getApplicationContext(),home.class));
-
+                        if(task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Login Successfull", Toast.LENGTH_LONG).show(); 
+                            startActivity(new Intent(getApplicationContext(), home.class));
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(),"Wrong password or username",Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
             }
